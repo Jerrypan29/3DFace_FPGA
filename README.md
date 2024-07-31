@@ -31,6 +31,7 @@ For any questions or contributions, please open an issue or submit a pull reques
 
 If you are interested in our work, please consider citing:
 
+```
 @inproceedings{xiong2023efficient,
 title={Efficient {FPGA-Based} Accelerator of the {L-BFGS} Algorithm for {IoT} Applications},
 author={Xiong, Huiyang and Xiong, Bohang and Wang, Wenhao and Tian, Jing and Zhu, Hao and Wang, Zhongfeng},
@@ -39,6 +40,7 @@ pages={1--5},
 year={2023},
 organization={IEEE}
 }
+```
 
 ## Usage
 

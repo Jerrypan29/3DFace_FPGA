@@ -14,13 +14,6 @@ The software benchmark is based on the open-source [FaceScape face reconstructio
 
 This code is specifically used to replace the bilinear model fitting stage in the original FaceScape project, where the L-BFGS algorithm implemented with SciPy is utilized. By opening up this algorithm, we can observe the computation time at each step, which allows for an easier comparison of software and hardware performance. Additionally, we have made minor modifications to the line searching conditions for faster convergence while maintaining accuracy.
 
-## Usage
-
-To use the modified L-BFGS optimizer in your project, you can clone this repository and import the necessary modules.
-
-```bash
-git clone https://github.com/Jerrypan29/L-BFGS.git
-
 ## References
 
 - [SciPy Library](https://www.scipy.org)
@@ -35,6 +28,15 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Special thanks to the contributors of the [FaceScape project](https://github.com/zhuhao-nju/facescape.git) for their open-source code.
 
 For any questions or contributions, please open an issue or submit a pull request.
+
+## Usage
+
+To use the modified L-BFGS optimizer in your project, you can clone this repository and import the necessary modules.
+
+```bash
+git clone https://github.com/Jerrypan29/L-BFGS.git
+
+
 
 
 

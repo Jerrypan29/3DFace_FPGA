@@ -1,6 +1,6 @@
-# Benchmark for FPGA-Based Accelerator for the L-BFGS Algorithm in 3D Face Reconstruction
+# FPGA-Based Accelerator for the L-BFGS Algorithm in 3D Face Reconstruction
 
-This repository contains a modified version of the L-BFGS optimizer from the SciPy library. The modifications are designed to enhance the convergence speed while maintaining accuracy.
+We utilize FPGAs to develop a high-throughput hardware accelerator of the Limited-Memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) optimization algorithm used in FaceScape algorithm. The accelerator design mainly targets two general components: the Search Direction Unit (SDU) and the Line Search Unit (LSU), along with a dedicated hardware accelerator for the FaceScape Objective Function Unit (OFU). This repository includes a portion of the FACESCAPE project's code, replacing the SciPy library's L-BFGS optimizer. We have made minor modifications to the line searching conditions for faster convergence while maintaining accuracy and log runtime at each step, facilitating comparison of hardware acceleration across modules.
 
 ## Modifications
 
@@ -20,3 +20,5 @@ To use the modified L-BFGS optimizer in your project, you can clone this reposit
 
 ```bash
 git clone https://github.com/Jerrypan29/L-BFGS.git
+
+

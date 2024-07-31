@@ -1,6 +1,6 @@
 # FPGA-Based Accelerator for the L-BFGS Algorithm in 3D Face Reconstruction
 
-We utilize FPGAs to develop a high-throughput hardware accelerator of the Limited-Memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) optimization algorithm used in FaceScape algorithm. The accelerator design mainly targets two general components: the Search Direction Unit (SDU) and the Line Search Unit (LSU), along with a dedicated hardware accelerator for the FaceScape Objective Function Unit (OFU). This repository includes a portion of the FACESCAPE project's code, replacing the SciPy library's L-BFGS optimizer. We have made minor modifications to the line searching conditions for faster convergence while maintaining accuracy and log runtime at each step, facilitating comparison of hardware acceleration across modules.
+We utilize FPGAs to develop a high-throughput hardware accelerator of the Limited-Memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) optimization algorithm used in FaceScape algorithm. The accelerator design mainly targets two general components: the Search Direction Unit and the Line Search Unit, along with a dedicated hardware accelerator for the FaceScape Objective Function Unit. This repository includes a portion of the FaceScape project's code, replacing the SciPy library's L-BFGS optimizer. We have made minor modifications to the line searching conditions for faster convergence while maintaining accuracy and log runtime at each step, facilitating comparison of hardware acceleration across modules.
 
 ## Modifications
 
@@ -20,5 +20,21 @@ To use the modified L-BFGS optimizer in your project, you can clone this reposit
 
 ```bash
 git clone https://github.com/Jerrypan29/L-BFGS.git
+
+## References
+
+- [SciPy Library](https://www.scipy.org)
+- Virtanen, P., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261-272. [doi:10.1038/s41592-019-0686-2](https://www.nature.com/articles/s41592-019-0686-2)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Special thanks to the contributors of the [FaceScape project](https://github.com/zhuhao-nju/facescape.git) for their open-source code.
+
+For any questions or contributions, please open an issue or submit a pull request.
+
 
 

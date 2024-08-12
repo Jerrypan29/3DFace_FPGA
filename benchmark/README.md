@@ -7,11 +7,13 @@ The `bilinear_model_v1.6` folder contains large model files that are managed usi
 1. **Install Git LFS**: Visit the [Git LFS official website](https://git-lfs.github.com/) and follow the instructions to install it.
 
 2. **Initialize Git LFS**:
+   
    Run the following command in your Git repository to initialize Git LFS:
    ```bash
    git lfs install
    
-3. **Pull LFS Files**:
+4. **Pull LFS Files**:
+   
    ```bash
    git lfs pull
 

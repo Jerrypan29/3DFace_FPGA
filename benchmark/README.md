@@ -12,6 +12,7 @@ The `bilinear_model_v1.6` folder contains large model files that are managed usi
    git lfs install
    
 3. **Pull LFS Files**:
+   ```bash
    git lfs pull
 
 # Download and Replace Models
@@ -23,6 +24,6 @@ If you encounter issues with Git LFS or prefer to manually replace the model fil
 
 After downloading the models, follow these steps to replace the files:
 
-1. Extract the downloaded model files (if they are compressed).
+1. Extract the downloaded model files.
 2. Copy the extracted files into the `bilinear_model_v1.6` folder, overwriting the existing model files.
 3. Ensure that the model file names match the original files to avoid any path or file name mismatches.

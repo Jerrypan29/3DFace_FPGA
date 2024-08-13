@@ -487,7 +487,7 @@ def scalar_search_armijo16(phi, phi0, derphi0, c1=1e-4, alpha0=1, amin=0):
         if (phi_a2 <= phi0 + (c1*alpha2*derphi0).astype(np.float16)):
             return alpha2, phi_a2
 
-        if (alpha1 - alpha2).astype(np.float16) > alpha1 / 2.0 or (1 - alpha2/alpha1).astype(np.float16) < 0.96:
+        if (alpha1 - alpha2).astype(np.float16) < alpha1 / 2.0 or (1 - alpha2/alpha1).astype(np.float16) > 0.96:
             alpha2 = alpha1 / 2.0
 
         alpha0 = alpha1

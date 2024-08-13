@@ -211,7 +211,7 @@ def InvHessProduct_1(gxk,s,y,rho,m):
     return r
 
 
-def _check_ftol(fx,fx_next,ftol=2.2204460492503131e-09):
+def _check_ftol(fx,fx_next,ftol=1e-5):
     temp=max(abs(fx), abs(fx_next))
     temp=max(temp,1.0)
     if (fx-fx_next)/temp<=ftol:
@@ -503,7 +503,7 @@ def fmin_l_bfgs(fun,x0,prime=None,args=(), maxcor=10, ftol=1e-5,gtol= 1e-5,maxit
         #start=time.time()
         #alpha_current=ls.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
         start_slu=time.time()
-        alpha_current=simplify_f.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
+        alpha_current=simplify.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
         end_slu=time.time()
         print("LSU time:",end_slu-start_slu)
         #print("--------------------------sim")

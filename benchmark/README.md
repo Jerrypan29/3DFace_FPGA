@@ -70,7 +70,7 @@ To evaluate the performance of the software implementation, follow these steps:
 
  **Visualize the Results**:
 
-To gain a better understanding of how well the model performs, use the provided Jupyter notebook to visualize the results:
+To gain a better understanding of how well the model performs, use the Jupyter notebook to visualize the results:
 
 1. **Open the Visualization Notebook**:
    - Launch Jupyter Notebook in your environment:
@@ -80,7 +80,4 @@ To gain a better understanding of how well the model performs, use the provided 
    - Open the `test_demo.ipynb` notebook from the Jupyter interface.
 
 2. **Run the Visualization Cells**:
-   - Execute the cells in the notebook to generate plots and visualizations that illustrate the model fitting effect.
-   - These visualizations will help in assessing the accuracy and performance of the model, allowing for a more intuitive comparison between different methods.
-
-
+ - These visualizations will help in assessing the model fitting effect, providing a clear and intuitive way to evaluate the model's performance.

@@ -1,4 +1,4 @@
-# Benchmark for SVFR Methods
+# Benchmark for L-BFGS Algorithm
 
 This benchmark focuses on the software execution of each step in the algorithm. By documenting the computation time at every stage, it provides a reference point for calculating the speedup that could be achieved with hardware acceleration.
 
@@ -13,11 +13,11 @@ The code is tested on CentOS 7 with Python 3. To ensure a consistent environment
 1. **Create a New Conda Environment**:
    - Open a terminal and create a new Conda environment with Python 3:
      ```bash
-     conda create --name svfr_benchmark python=3.8
+     conda create --name benchmark_bfgs python=3.8
      ```
    - Activate the environment:
      ```bash
-     conda activate svfr_benchmark
+     conda activate benchmark_bfgs
      ```
 
 2. **Install Required Libraries**:

@@ -1,0 +1,103 @@
+iteration 0
+function value: 909.489133
+
+iteration 1
+GCU time: 0.002329300012sec
+LSU+OFU time: 0.000046700006sec
+OFU time: 0.000023600005sec
+function value: 722.407896
+
+iteration 2
+GCU time: 0.002364500018sec
+SDU time: 0.000001000008sec
+LSU+OFU time: 0.000047599984sec
+OFU time: 0.000022499997sec
+function value: 713.753336
+
+iteration 3
+GCU time: 0.002349499991sec
+SDU time: 0.000001300010sec
+LSU+OFU time: 0.000046399975sec
+OFU time: 0.000023600005sec
+function value: 657.090203
+
+iteration 4
+GCU time: 0.002536999993sec
+SDU time: 0.000001700013sec
+LSU+OFU time: 0.000047499983sec
+OFU time: 0.000022699998sec
+function value: 510.577182
+
+iteration 5
+GCU time: 0.002324600006sec
+SDU time: 0.000001999986sec
+LSU+OFU time: 0.000047700014sec
+OFU time: 0.000023700006sec
+function value: 472.853573
+
+iteration 6
+GCU time: 0.002340000006sec
+SDU time: 0.000002300018sec
+LSU+OFU time: 0.000044499990sec
+OFU time: 0.000023100001sec
+function value: 459.652601
+
+iteration 7
+GCU time: 0.002269899996sec
+SDU time: 0.000002700021sec
+LSU+OFU time: 0.000045900000sec
+OFU time: 0.000022800028sec
+function value: 455.626378
+
+iteration 8
+GCU time: 0.002185799996sec
+SDU time: 0.000002899993sec
+LSU+OFU time: 0.000044899993sec
+OFU time: 0.000022900000sec
+function value: 453.524080
+
+iteration 9
+GCU time: 0.002325700014sec
+SDU time: 0.000003299996sec
+LSU+OFU time: 0.000043800013sec
+OFU time: 0.000022699998sec
+function value: 452.864348
+
+iteration 10
+GCU time: 0.002394900017sec
+SDU time: 0.000004200003sec
+LSU+OFU time: 0.000046000001sec
+OFU time: 0.000022799999sec
+function value: 452.756022
+
+iteration 11
+GCU time: 0.002287500014sec
+SDU time: 0.000004300004sec
+LSU+OFU time: 0.000044699991sec
+OFU time: 0.000023300003sec
+function value: 452.653808
+
+iteration 12
+GCU time: 0.002280799992sec
+SDU time: 0.000004000001sec
+LSU+OFU time: 0.000044800021sec
+OFU time: 0.000021799991sec
+function value: 452.639323
+
+iteration 13
+GCU time: 0.002285399998sec
+SDU time: 0.000004200003sec
+LSU+OFU time: 0.000045699999sec
+OFU time: 0.000022699998sec
+function value: 452.636504
+
+iteration 14
+GCU time: 0.002177299990sec
+SDU time: 0.000004200003sec
+LSU+OFU time: 0.000046000001sec
+OFU time: 0.000022900000sec
+function value: 452.635877
+
+Satisfy f condition and converge to the number of iterations 14
+CPU time per iteration: 0.002395828573sec
+CPU total time: 0.033541600016sec

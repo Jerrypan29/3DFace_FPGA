@@ -1,14 +1,14 @@
 # FPGA-Based Accelerator for the L-BFGS Algorithm in 3D Face Reconstruction
 
-We utilize FPGAs to develop a high-throughput hardware accelerator of the Limited-Memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) optimization algorithm used in FaceScape algorithm. The accelerator design mainly targets two general components: the Search Direction Unit and the Line Search Unit, along with a dedicated hardware accelerator for the FaceScape Objective Function Unit. We have made minor adjustments to the line search conditions to enhance convergence speed while preserving accuracy. Additionally, we log the runtime at each step to facilitate the comparison of hardware acceleration across different modules.
+We utilize FPGAs to develop a high-throughput hardware accelerator of the Limited-Memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) optimization algorithm used in FaceScape algorithm. The accelerator design mainly targets two general components: a general-purpose L-BFGS computation module, primarily comprising the SDU and LSU, and a specialized Objective Function Unit (OFU) with a Gradient Calculation Unit (GCU) tailored for 3D face reconstruction. Additionally, we log the runtime at each step to facilitate the comparison of hardware acceleration across different modules.
 
 ## Benchmarking
 
-Please note that the results were obtained using an Intel i7-13700 @4.5GHz processor with a 64-bit operating system. Performance may vary with different hardware setups, potentially yielding better or worse results. Therefore, the results should be used as a reference rather than an absolute measure.
+Please note that the results were obtained using an Intel i7-12700 processor with a 64-bit operating system. Performance may vary with different hardware setups, potentially yielding better or worse results. Therefore, the results should be used as a reference rather than an absolute measure.
 
 ## Purpose of the Code
 
-This code replaces the L-BFGS algorithm in the bilinear model fitting stage of the original FaceScape project with a detailed step-by-step implementation. The original algorithm directly employed SciPy’s implementation. By exposing the inner workings of this algorithm, we can observe the computation time at each step, facilitating a more straightforward comparison of software and hardware performance. Additionally, we have made minor modifications to the line search conditions to achieve faster convergence while maintaining accuracy. 
+This code replaces the L-BFGS algorithm in the bilinear model fitting stage of the original FaceScape project with a detailed step-by-step implementation. The original algorithm directly employed SciPy’s implementation. By exposing the inner workings of this algorithm, we can observe the computation time at each step. Additionally, for a clearer comparison of software and hardware performance, we also implement the accelerated component of our hardware design in optimized C language and compile it using GCC.
 
 ## References
 

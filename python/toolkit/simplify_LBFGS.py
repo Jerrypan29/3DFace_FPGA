@@ -27,20 +27,14 @@ def InvHessProduct(gxk,s,y,rho,m):
     maxcor=min(m,s.shape[0])
     alpha = np.empty(maxcor)
 
-    print_into_file("toolkit/s.txt",s)
-    print_into_file("toolkit/y.txt",y)
-    print_into_file("toolkit/q.txt",q)
-
     for i in range(maxcor - 1, -1, -1):
         #print("test",np.dot(s[i], q))
         alpha[i] = rho[i] * np.dot(s[i], q)
-        print_into_file("toolkit/alpha.txt",alpha)
         q = q - alpha[i] * y[i]
     
     r = q
     for i in range(maxcor):
         beta = rho[i] * np.dot(y[i], r)
-        print_into_file("toolkit/beta.txt",beta)
         r = r + s[i] * (alpha[i] - beta)
     return r
 
@@ -292,9 +286,7 @@ def fmin_l_bfgs_f(fun,x0,prime=None,args=(), maxcor=10, ftol=2.2204460492503131e
     x_current=x1.copy()
     fx_current=fx1
     gx_current=g1.copy()
-   # print("x_current:{}".format(x_current))
-    fx_last=fx0
-    
+
     df = pd.DataFrame()
     item = pd.Series({'index':0,'alpha':alpha0,'rho':rho0[0], 'x0':x0, 'x1-x0':s0, 'g1-g0':y0})
     df = df.append(item,ignore_index = True)
@@ -303,21 +295,8 @@ def fmin_l_bfgs_f(fun,x0,prime=None,args=(), maxcor=10, ftol=2.2204460492503131e
     while(True):
         r=InvHessProduct(gx_current,s,y,rho,maxcor)
         search_direction_current=-r
-        #end = time.time()
-        #time1=end-start
-        #print("time1:{}".format(end-start))
-        #alpha_current=simplify.line_search_wolfe2(func,fprime,x_current,search_direction_current,gx_current,fx_current,fx_last)
         start=time.time()
-        #alpha_current=ls.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
         alpha_current=simplify_f.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
-        #print("--------------------------sim")
-        '''
-        alpha_current=ls.line_search_wolfe2(func,fprime,x_current,search_direction_current,gx_current,fx_current,fx_last)[0]
-        
-        #alpha_current=ls.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
-        if alpha_current is None:
-            alpha_current=ls.line_search_wolfe1(func,fprime,x_current,search_direction_current,gx_current,fx_current,fx_last)[0]
-        '''
         end = time.time()
         total+=end-start
         
@@ -479,15 +458,11 @@ def fmin_l_bfgs(fun,x0,prime=None,args=(), maxcor=10, ftol=1e-5,gtol= 1e-5,maxit
     x_current=x1.copy()
     fx_current=fx1
     gx_current=g1.copy()
-   # print("x_current:{}".format(x_current))
-    fx_last=fx0
-    
+
     df = pd.DataFrame()
     item = pd.Series({'index':0,'alpha':alpha0,'rho':rho0[0], 'x0':x0, 'x1-x0':s0, 'g1-g0':y0})
 
     df = pd.concat([df, item], ignore_index=True)
-    #print('******************\n',df)
-    #count = 1
     round=3
     while(True):
         start_sdu=time.time()
@@ -496,42 +471,16 @@ def fmin_l_bfgs(fun,x0,prime=None,args=(), maxcor=10, ftol=1e-5,gtol= 1e-5,maxit
         print("SDU time:",end_sdu-start_sdu)
 
         search_direction_current=-r
-        #end = time.time()
-        #time1=end-start
-        #print("time1:{}".format(end-start))
-        #alpha_current=simplify.line_search_wolfe2(func,fprime,x_current,search_direction_current,gx_current,fx_current,fx_last)
-        #start=time.time()
-        #alpha_current=ls.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
         start_slu=time.time()
         alpha_current=simplify.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
         end_slu=time.time()
         print("LSU time:",end_slu-start_slu)
-        #print("--------------------------sim")
-        '''
-        alpha_current=ls.line_search_wolfe2(func,fprime,x_current,search_direction_current,gx_current,fx_current,fx_last)[0]
-        
-        #alpha_current=ls.line_search_BFGS(func,x_current,search_direction_current,gx_current,fx_current)[0]
-        if alpha_current is None:
-            alpha_current=ls.line_search_wolfe1(func,fprime,x_current,search_direction_current,gx_current,fx_current,fx_last)[0]
-        '''   
-        x_next=x_current+alpha_current*search_direction_current
-        #print("alpha:",alpha_current)
-        #print("search_direction_current:",search_direction_current)
-        #print("alpha_current",alpha_current)
-        
+        x_next=x_current+alpha_current*search_direction_current  
         fx_next=func(x_next)
         print("alpha:",alpha_current)
         print("object function value:",fx_next)
-        # print("fx:{}".format(fx_next))
+
         if _check_ftol(fx_current,fx_next,ftol):
-            '''
-            file = open('./test_out/res.txt','r+')
-            file.read()
-            file.write('time of linesearch:')
-            file.write(str(total))
-            file.write('\n')
-            file.close()
-            '''
             df.to_csv(out_file_name, mode='a')
             end=time.time()
             total=end-start
@@ -540,14 +489,6 @@ def fmin_l_bfgs(fun,x0,prime=None,args=(), maxcor=10, ftol=1e-5,gtol= 1e-5,maxit
             return x_next,fx_next
         gx_next=fprime(x_next)
         if _check_gtol(gx_next,gtol):
-            '''
-            file = open('./test_out/res.txt','r+')
-            file.read()
-            file.write('time of linesearch:')
-            file.write(str(total))
-            file.write('\n')
-            file.close()
-            '''
             df.to_csv(out_file_name, mode='a')
             end=time.time()
             total=end-start
@@ -580,8 +521,7 @@ def fmin_l_bfgs(fun,x0,prime=None,args=(), maxcor=10, ftol=1e-5,gtol= 1e-5,maxit
         if cnt_iter>=maxiter:
             print("amout to maxiter")
             break
-        #print(cnt_iter)
-        #print(rho_new)
+
         item = pd.Series({'index':cnt_iter,'alpha':alpha_current,'rho':rho_new, 'x0':x_current, 'x1-x0':s_new, 'g1-g0':y_new})
         
         #print('#################',x_current.shape)

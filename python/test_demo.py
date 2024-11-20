@@ -13,7 +13,7 @@ fs_fitter = facescape_fitter(fs_file = "./bilinear_model_v1.6/facescape_bm_v1.6_
 loading_time = time.time()
 print("loading time:",loading_time-start)
 
-src_img = cv2.imread("./test_data/chan.jpg")  
+src_img = cv2.imread("./test_data/0.jpg")  
 
 print("reading img file start")
 

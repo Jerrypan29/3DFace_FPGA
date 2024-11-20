@@ -423,10 +423,8 @@ def line_search_BFGS(f, xk, pk, gfk, old_fval, args=(), c1=1e-4, alpha0=1):
 
 #armijo
 def scalar_search_armijo(phi, phi0, derphi0, c1=1e-4, alpha0=1, amin=0):
-    #phi = phi.astype(np.single)
     #########################################
     phi_a0 = phi(alpha0)
-    #print("phi_alpha0",phi_a0)
     if phi_a0 <= phi0 + c1*alpha0*derphi0:
         return alpha0, phi_a0
 

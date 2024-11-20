@@ -4,7 +4,7 @@ We utilize FPGAs to develop a high-throughput hardware accelerator of the Limite
 
 ## Benchmarking
 
-Please note that the results were obtained using an Intel i7-12700 processor with a 64-bit operating system. Performance may vary with different hardware setups, potentially yielding better or worse results. Therefore, the results should be used as a reference rather than an absolute measure.
+We select 330 face images from the FaceScape dataset as the testing data for evaluation. Please note that the results were obtained using an Intel i7-12700 processor with a 64-bit operating system. Performance may vary with different hardware setups, potentially yielding better or worse results. Therefore, the results should be used as a reference rather than an absolute measure.
 
 ## Purpose of the Code
 

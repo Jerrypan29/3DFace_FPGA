@@ -27,25 +27,15 @@ Special thanks to the contributors of the [FaceScape project](https://github.com
 
 For any questions or contributions, please open an issue or submit a pull request.
 
-## Bibtex
-
-If you are interested in our work, please consider citing:
-
-```
-@inproceedings{xiong2023efficient,
-title={Efficient {FPGA-Based} Accelerator of the {L-BFGS} Algorithm for {IoT} Applications},
-author={Xiong, Huiyang and Xiong, Bohang and Wang, Wenhao and Tian, Jing and Zhu, Hao and Wang, Zhongfeng},
-booktitle={2023 IEEE International Symposium on Circuits and Systems (ISCAS)},
-pages={1--5},
-year={2023},
-organization={IEEE}
-}
-```
-
 ## Usage
 
 To use the modified L-BFGS optimizer in your project, you can clone this repository and import the necessary modules.
 
 ```bash
 git clone https://github.com/Jerrypan29/L-BFGS.git
+```
+
+After cloning, locate the RTL files and IP cores in the repository, and then import them into Vivado.
+
+
 
